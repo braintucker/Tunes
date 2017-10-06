@@ -1,5 +1,5 @@
 declare var app: {
-  environment: string
+  environment: string;
 };
 
-declare function require(id:string): any;
+declare function require(id: string): any;

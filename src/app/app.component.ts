@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'angular-tunes',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  template: `
+    <div class="container">
+      <artist-list></artist-list>
+    </div>
+  `
 })
 export class AppComponent { }

@@ -1,5 +1,5 @@
 {
-  "name": "angular2-starter",
+  "name": "angular-tunes",
   "version": "0.2.1",
   "scripts": {
     "build": "webpack --progress",
@@ -22,14 +22,14 @@
     "zone.js": "0.6.25"
   },
   "devDependencies": {
-    "angular2-template-loader": "^0.6.2",
-    "cross-env": "^3.0.0",
-    "html-webpack-plugin": "^2.22.0",
-    "raw-loader": "^0.5.1",
+    "angular2-template-loader": "0.5.0",
+    "cross-env": "3.0.0",
+    "html-webpack-plugin": "2.22.0",
+    "raw-loader": "0.5.1",
     "ts-loader": "0.8.2",
     "typescript": "2.0.3",
     "typings": "1.4.0",
     "webpack": "1.13.2",
-    "webpack-dev-server": "^1.16.1"
+    "webpack-dev-server": "1.16.1"
   }
 }
