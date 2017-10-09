@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtistService } from './artist.service';
 
@@ -6,15 +7,21 @@ import { ArtistService } from './artist.service';
   selector: 'artist-detail',
   templateUrl: 'artist-detail.component.html'
 })
-export class ArtistDetailComponent {
+export class ArtistDetailComponent implements OnInit, OnDestroy {
 
   artist;
+  paramsSubscription;
 
   constructor(private route: ActivatedRoute,
-              private artistService: ArtistService) {
-    //console.log('params:', route.snapshot.params);
-    route.params.subscribe(params => {
+              private artistService: ArtistService) { }
+
+  ngOnInit() {
+    this.paramsSubscription = this.route.params.subscribe(params => {
         this.artist = this.artistService.getArtist(params['artistId']);
-    });
+      });
+  }
+
+  ngOnDestroy() {
+    this.paramsSubscription.unsubscribe();
   }
 }
