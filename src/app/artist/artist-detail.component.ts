@@ -8,13 +8,13 @@ import { ArtistService } from './artist.service';
 })
 export class ArtistDetailComponent {
 
-  artist;  
+  artist;
 
   constructor(private route: ActivatedRoute,
               private artistService: ArtistService) {
     //console.log('params:', route.snapshot.params);
-    const artistId = route.snapshot.params['artistId'];
-    this.artist = this.artistService.getArtist(artistId);
+    route.params.subscribe(params => {
+        this.artist = this.artistService.getArtist(params['artistId']);
+    });
   }
-
 }
