@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ArtistService } from './artist.service';
 
 @Component({
@@ -7,14 +7,10 @@ import { ArtistService } from './artist.service';
 })
 export class ArtistDetailComponent {
 
-  @Input() artistId;
   artist;
-
+  artistId = '630662ea-1c7d-4208-99fd-ba3afec20f0c';
 
   constructor(private artistService: ArtistService) {
-  }
-
-  ngOnInit() {
     this.artist = this.artistService.getArtist(this.artistId);
   }
 

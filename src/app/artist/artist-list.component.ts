@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ArtistService } from './artist.service';
 
 @Component({
@@ -7,7 +7,6 @@ import { ArtistService } from './artist.service';
 })
 export class ArtistListComponent {
 
-  @Output() artistSelect = new EventEmitter();
   artists;
 
   constructor(artistService: ArtistService) {
