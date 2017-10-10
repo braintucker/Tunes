@@ -3,6 +3,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common'
 import { BrowserModule } from '@angular/platform-browser';
 import { LoggedInGuard } from './login/logged-in.guard';
 import { LoginFormComponent } from './login/login-form.component';
+import { LoginService } from './login/login.service';
 import { routing } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { AlbumDetailComponent } from './album/album-detail.component';
     ArtistService,
     AlbumService,
     LoggedInGuard,
+    LoginService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
