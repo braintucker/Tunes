@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from './login.service';
 
 @Component({
@@ -17,12 +17,17 @@ export class LoginFormComponent {
   user = '';
   password = '';
 
-  constructor(private router: Router,
+  constructor(private route: ActivatedRoute,
+              private router: Router,
               private loginService: LoginService) { }
 
   login() {
+    //console.log('queryParams:', this.route.snapshot.queryParams);
+
     if (this.loginService.login(this.user, this.password)) {
-      this.router.navigate(['/']);
+      const destination =
+       this.route.snapshot.queryParams['destination'] || '/';
+      this.router.navigateByUrl(destination);
     }
   }
 
