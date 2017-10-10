@@ -5,6 +5,6 @@ export class LoggedInGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         console.log('intercepted:', state.url);
-        return true;
+        return false;
     }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common'
 import { BrowserModule } from '@angular/platform-browser';
 import { LoggedInGuard } from './login/logged-in.guard';
+import { LoginFormComponent } from './login/login-form.component';
 import { routing } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -19,7 +20,8 @@ import { AlbumDetailComponent } from './album/album-detail.component';
     ArtistListComponent,
     ArtistDetailComponent,
     AlbumListComponent,
-    AlbumDetailComponent
+    AlbumDetailComponent,
+    LoginFormComponent
   ],
   providers: [
     ArtistService,
