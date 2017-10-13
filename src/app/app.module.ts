@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common'
 import { BrowserModule } from '@angular/platform-browser';
 import { LoggedInGuard } from './login/logged-in.guard';
 import { LoginFormComponent } from './login/login-form.component';
@@ -28,8 +27,7 @@ import { AlbumDetailComponent } from './album/album-detail.component';
     ArtistService,
     AlbumService,
     LoggedInGuard,
-    LoginService,
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
